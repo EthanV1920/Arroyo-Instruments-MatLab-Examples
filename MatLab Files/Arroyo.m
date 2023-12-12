@@ -337,7 +337,7 @@ while acquiring
             temp_command = sprintf("tec:t %d;out 1", Tset);
             writeline(device1, temp_command);
             out_tol = 1;
-            pause(50); % Allow command to be sent
+            pause(.04); % Allow command to be sent
         else
             acquiring = 0;
         end
@@ -351,35 +351,3 @@ xlabel(ramp_plot, "Time");
 xtickangle(ramp_plot, 45);
 xtickformat(ramp_plot,"auto")
 legend(ramp_plot, "Voltage (V)", "Current(A)", "Temperature(Celcius)");
-
-% writeline(device1, "time?;tec:v?;tec:ite?;tec:t?;tec:r?");
-% string = readline(device1)
-% pstring = "00:01:02:03.22"
-% 
-% 
-% 
-% % remain = string
-% segments = strings(0)
-% [token,remain] = split(string, ',')
-% segments = [segments ; token]
-% 
-% str = "09:12:34.233"
-% d = datetime(str, InputFormat="HH:mm:ss.SSS")
-% 
-% 
-% time_variables = split(segments(1), ':')
-% 
-% t = time_variables(2) + ":" + time_variables(3) + ":" + time_variables(4)
-% 
-% time_reading = datetime(t, InputFormat = "HH:mm:ss.SS")
-% recorded_values = zeros(1,5)
-% 
-% recorded_values = [recorded_values; t, segments(2:5)']
-
-
-
-
-
-
-
-
